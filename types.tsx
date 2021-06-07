@@ -9,14 +9,24 @@ export type RootStackParamList = {
 };
 
 export type BottomTabParamList = {
-  TabOne: undefined;
-  TabTwo: undefined;
+  Home: undefined;
+  History: undefined;
+  SendReport: undefined;
+  User: undefined;
 };
 
-export type TabOneParamList = {
-  TabOneScreen: undefined;
+export type HomeParamList = {
+  Home: undefined;
+  AddDisciplineReport: undefined;
 };
 
-export type TabTwoParamList = {
-  TabTwoScreen: undefined;
+export type HistoryParamList = {
+  History: undefined;
+};
+export type SendReportParamList = {
+  SendReport: undefined;
+};
+
+export type UserParamList = {
+  User: undefined;
 };

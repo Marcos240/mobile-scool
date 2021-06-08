@@ -1,14 +1,17 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import { Alert, StyleSheet, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Text, View } from '../../components/Themed';
 
-export default function ListClass() {
+export default function ListClass(props:any) {
+    const { item, onPress } = props;
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Lớp 10A1</Text>
-      <Ionicons name="create" size={24} align="center"/>
-    </View>
+    <TouchableOpacity onPress={onPress} activeOpacity={.7}>
+      <View style={styles.container}>
+        <Text style={styles.title}>{item}</Text>
+        <Ionicons name="create" size={24} align="center"/>
+      </View>
+    </TouchableOpacity>
   );
 }
 
@@ -18,21 +21,22 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: 14,
+    padding: 16,
     paddingRight: 40,
     paddingLeft: 40,
-    borderRadius: 16,
-    borderWidth: 1,
-    backgroundColor:'#FFF',
+    borderRadius: 24,
+    borderWidth: 0.2, 
     shadowColor: '#000',
-    shadowOpacity: 0.5,
-    shadowRadius: 100,
-    marginBottom:8,
+    shadowOpacity: 0.2,
+    marginBottom:16,
     shadowOffset: {width: 0 , height: 0},
   },
   title: {
     textTransform: 'uppercase',
     fontWeight: '700',
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowOffset: {width: 0 , height: 0},
   }
 });
 

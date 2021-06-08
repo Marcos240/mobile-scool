@@ -10,8 +10,6 @@ import * as React from 'react';
 
 import Colors from '../../constants/Colors';
 import useColorScheme from '../../hooks/useColorScheme';
-import TabOneScreen from '../../screens/TabOneScreen';
-import TabTwoScreen from '../../screens/TabTwoScreen';
 
 
 import { BottomTabParamList, HistoryParamList, HomeParamList, SendReportParamList, UserParamList} from '../../types';
@@ -19,6 +17,7 @@ import Home from '../../screens/Home/Home';
 import SendReport from '../../screens/SendReport';
 import History from '../../screens/History';
 import User from '../../screens/User';
+import AddDisciplineReport from '../../screens/Home/AddDisciplineReport';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -77,7 +76,12 @@ function HomeNavigator() {
       <HomeStack.Screen
         name="Home"
         component={Home}
-        options={{ headerTitle: 'Home' }}
+        options={{ headerTitle: 'Danh sách lớp chấm điểm thi đua' }}
+      />
+      <HomeStack.Screen
+        name="AddDisciplineReport"
+        component={AddDisciplineReport}
+        options={{ headerTitle: 'Chấm vi phạm lớp 10A1' }}
       />
     </HomeStack.Navigator>
   );

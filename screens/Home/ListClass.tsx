@@ -21,11 +21,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: 16,
+    padding: 20,
     paddingRight: 40,
     paddingLeft: 40,
-    borderRadius: 24,
-    borderWidth: 0.2, 
+    borderWidth: 0.4,
+    borderRadius: 28,
     shadowColor: '#000',
     shadowOpacity: 0.2,
     marginBottom:16,
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
     fontWeight: '700',
     shadowColor: '#000',
-    shadowOpacity: 0.2,
+    shadowOpacity: 0.4,
     shadowOffset: {width: 0 , height: 0},
   }
 });

@@ -76,65 +76,73 @@ export default function AddDisciplineReport() {
   return (
     <View
       style={{
-        flexDirection: 'column',
-        height: '100%',
+        flex: 1,
+        backgroundColor: '#EEEEEE'
       }}
     >
-      <View >
         
-        <View style={styles.marginLR}>
+        <View style={{flex: 1, backgroundColor:'#EEEEEE'}}>
             <TouchableOpacity
-              style={styles.AddReportlineButtonStyle}
+              style={styles.AddClassDisciplineButtonStyle}
               activeOpacity = { .5 }
               
               onPress={()=> {
                 Alert.alert("Hoàn thành chấm lớp 10A1");
               }}
-          >
-              <Text style={styles.TextStyle}> HOÀN TẤT </Text>
+            >
+              <Text style={{color:'#fff', textAlign:'center'}}> XONG </Text>
               <Ionicons name="checkmark" size={24} color="white" align="center"/>
           </TouchableOpacity>
         </View>
-        <ScrollView >
-          <View style={styles.container}>
+        <View style={{flex: 7, backgroundColor:'#EEEEEE'}}>
+          <View style={styles.dropDown}>
             <Dropdown
               label="Loại vi phạm"
+              underlineColor = "white"
+              floating
+              borderRadius = {16}
               data={dtNameTypeDiscipline}
               value={nameTypeDiscipline}
               onChange={onChangeNameTypeDiscipline}
             />
           </View>
-          <View style={styles.container}>
+          <View style={styles.dropDown}>
             <Dropdown
               label="Tên vi phạm"
+              underlineColor = "white"
+              floating
+              borderRadius = {16}
               data={dtNameDiscipline}
               enableSearch
               value={nameDiscipline}
               onChange={onChangeNameDiscipline}
             />
           </View>
-          <View style={styles.container}>
+          <View style={styles.multiSelectDropdown}>
             <MultiselectDropdown 
               label="Danh sách học sinh vi phạm"
+              underlineColor = "white"
+              floating
+              borderRadius = {16}
               data={dtNamePupil}
               enableSearch
+              searchPlaceholder = "Tìm kiếm học sinh"
               chipType="outlined"
               value={listPupil}
               onChange={onChangeListPupil}
             />
           </View>
-        </ScrollView>     
-      </View> 
-      <View style={styles.marginLR}>
-          <TouchableOpacity
-            style={styles.AddDisciplineButtonStyle}
-            activeOpacity = { .5 }
-            onPress={()=> {
-              Alert.alert("Thêm vi phạm thành công");
-            }}
+        </View>     
+      <View style={{flex: 1, justifyContent: 'center',}}>
+        <TouchableOpacity
+          style={styles.AddDisciplineButtonStyle}
+          activeOpacity = { .5 }
+          onPress={()=> {
+            Alert.alert("Thêm vi phạm thành công");
+          }}
         >
-            <Text style={styles.TextStyle}> THÊM VI PHẠM </Text>
-            <Ionicons name="add" size={24} color="white" align="center"/>
+          <Text style={styles.btnTextStyle}> THÊM VI PHẠM </Text>
+          <Ionicons name="add" size={24} color="white" align="center"/>
         </TouchableOpacity>
       </View>      
     </View>
@@ -143,20 +151,45 @@ export default function AddDisciplineReport() {
   
 
   const styles = StyleSheet.create({
-    container: {
-      paddingTop: 36,
+    
+    //btn done
+    AddClassDisciplineButtonStyle: { 
+      marginTop:10,
+      paddingTop:4,
+      paddingBottom:4,
+      paddingRight: 8, 
+      paddingLeft:8,
+      marginRight: 12,
+      backgroundColor:'#006633',
+      alignContent: 'flex-end',
+      borderRadius:32,
+      borderWidth: 1,
+      borderColor: '#fff',
+      justifyContent: 'center',
+      display: 'flex',
+      flexDirection: 'row',
+      alignSelf: 'flex-end',
+      alignItems: 'center',
+    },
+    multiSelectDropdown : {
+      borderRadius: 16,
+      borderWidth: 0.4,
       marginLeft: 28,
       marginRight: 28,  
       marginBottom: 28,
-      flex: 1,
+      flex: 1,      
     },
-    marginLR: {
+    dropDown: {
+      borderRadius: 16,
+      borderWidth: 0.4,
       marginLeft: 28,
-      marginRight: 28,
+      marginRight: 28,  
+      marginBottom: 28,
+      flex: 0.5,
     },
     AddDisciplineButtonStyle: { 
-      marginTop:30,
-      marginBottom:10,
+      marginLeft: 24,
+      marginRight: 24,
       paddingTop:12,
       paddingBottom:12,
       backgroundColor:'#2196F3',
@@ -166,26 +199,11 @@ export default function AddDisciplineReport() {
       display: 'flex',
       flexDirection: 'row',
       alignItems: 'center',
-      justifyContent: 'center',
+      justifyContent: 'center'
     },   
-    TextStyle:{
+    btnTextStyle:{
         color:'#fff',
         textAlign:'center',
-    },
-    AddReportlineButtonStyle: { 
-      marginTop:10,
-      paddingTop:4,
-      paddingBottom:8,
-      backgroundColor:'#007700',
-      alignContent: 'flex-end',
-      width: 110,
-      borderRadius:32,
-      borderWidth: 1,
-      borderColor: '#fff',
-      justifyContent: 'space-around',
-      display: 'flex',
-      flexDirection: 'row',
-      alignSelf: 'flex-end',
-      alignItems: 'flex-end',
+        paddingRight: 16,
     },
   });

@@ -9,7 +9,7 @@ export interface classes {
   name: string
 }
 
-export default class HomeScreen extends React.Component<{}, any> {
+export default class HomeScreen extends React.Component<{},any> {
   constructor(props:classes) {
     super(props);  
     this.state = {
@@ -34,7 +34,7 @@ export default class HomeScreen extends React.Component<{}, any> {
     const {classes} = this.state;
     const {navigation} = this.props;
     return (      
-        <View >
+        <View style = {{backgroundColor:'#EEEEEE'}}>
           <ScrollView style={{marginTop: 16, paddingLeft: 24, paddingRight: 24}}>
             {classes.map((item:classes) => (
                   <ListClass key={item.id} item={item.name} onPress={() =>navigation.navigate('AddDisciplineReport')}/>

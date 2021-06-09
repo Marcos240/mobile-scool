@@ -25,6 +25,7 @@ export type HistoryParamList = {
 };
 export type SendReportParamList = {
   SendReport: undefined;
+  DetailReport: undefined;
 };
 
 export type UserParamList = {

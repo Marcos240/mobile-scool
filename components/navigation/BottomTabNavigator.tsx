@@ -14,10 +14,11 @@ import useColorScheme from '../../hooks/useColorScheme';
 
 import { BottomTabParamList, HistoryParamList, HomeParamList, SendReportParamList, UserParamList} from '../../types';
 import Home from '../../screens/Home/Home';
-import SendReport from '../../screens/SendReport';
+import SendReport from '../../screens/SendReport/SendReport';
 import History from '../../screens/History';
 import User from '../../screens/User';
 import AddDisciplineReport from '../../screens/Home/AddDisciplineReport';
+import DetailReport from '../../screens/SendReport/DetailReport';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -95,7 +96,7 @@ function HistoryNavigator() {
       <HistoryStack.Screen
         name="History"
         component={History}
-        options={{ headerTitle: 'History' }}
+        options={{ headerTitle: 'Lịch sử' }}
       />
     </HistoryStack.Navigator>
   );
@@ -110,6 +111,11 @@ function SendReportNavigator() {
         name="SendReport"
         component={SendReport}
         options={{ headerTitle: 'Send Report' }}
+      />
+      <SendReportStack.Screen
+        name="DetailReport"
+        component={DetailReport}
+        options={{ headerTitle: 'Chi tiết vi phạm lớp 10A1' }}
       />
     </SendReportStack.Navigator>
   );
@@ -128,3 +134,4 @@ function UserNavigator() {
     </UserStack.Navigator>
   );
 }
+

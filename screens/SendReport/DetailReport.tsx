@@ -1,12 +1,11 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
+import { Text, View } from '../../components/Themed';
 
-import { Text, View } from '../components/Themed';
-
-export default function SendReport() {
+export default function DetailReport() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>SendReport</Text>
+    <View style={{ alignSelf:'baseline'}}>
+      <Text>Child Content</Text>
     </View>
   );
 }
